@@ -1,4 +1,5 @@
 DemoPortal::Application.routes.draw do
+  devise_for :users, controller: {sessions: "sessions"}
   resources :users, only: [:index, :create, :edit, :show, :update, :destroy]
   resources :sessions, only: [:create]
   root 'static_pages#home'
