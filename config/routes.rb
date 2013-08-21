@@ -1,5 +1,5 @@
 DemoPortal::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, only: [:index, :show]
   root 'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
